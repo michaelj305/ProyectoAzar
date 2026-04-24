@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # The directory Mix will write compiled artifacts to.
 /_build/
 
@@ -22,3 +23,17 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 proyecto_azar-*.tar
 
+=======
+# Archivos de compilación y dependencias
+/_build
+/deps
+/.elixir_ls
+
+# Archivos de error y binarios
+erl_crash.dump
+*.beam
+
+# Archivos de sistema (Opcional pero recomendado)
+.DS_Store
+Thumbs.db
+>>>>>>> 6a006fccce53161f8d6227b1d0e38b9b642b085d
