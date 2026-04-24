@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+# The directory Mix will write compiled artifacts to.
+/_build/
+
+# If you run "mix test --cover", coverage assets end up here.
+/cover/
+
+# The directory Mix downloads your dependencies sources to.
+/deps/
+
+# Where third-party dependencies like ExDoc output generated docs.
+/doc/
+
+# Temporary files, for example, from tests.
+/tmp/
+
+# If the VM crashes, it generates a dump, let's ignore it too.
+erl_crash.dump
+
+# Also ignore archive artifacts (built via "mix archive.build").
+*.ez
+
+# Ignore package tarball (built via "mix hex.build").
+proyecto_azar-*.tar
+
+=======
 # Archivos de compilación y dependencias
 /_build
 /deps
@@ -10,3 +36,4 @@ erl_crash.dump
 # Archivos de sistema (Opcional pero recomendado)
 .DS_Store
 Thumbs.db
+>>>>>>> 6a006fccce53161f8d6227b1d0e38b9b642b085d
