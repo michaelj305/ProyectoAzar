@@ -46,4 +46,30 @@ defmodule Azar.Jugador do
     |> Jason.encode!()
     |> (&File.write(nombre, &1)).()
   end
+
+  def cargar_jugadores(nombre_archivo \\ "jugadores.json") do
+    case File.read(nombre_archivo) do
+      {:ok, contenido} ->
+        contenido
+        |> Jason.decode!()
+        |> Enum.map(fn mapa ->
+          # Convertimos el mapa en nuestra estructura %Azar.Jugador{}
+          struct(__MODULE__, for({k, v} <- mapa, into: %{}, do: {String.to_atom(k), v}))
+        end)
+
+      {:error, :enoent} ->
+        # Si el archivo no existe, devolvemos lista vacía para que el programa siga
+        []
+    end
+  end
+
+ #Validar que no haya jugadores con la misma identificación y que no haya campos vacíos o jugadores que no existen
+
+  def validar_lista(jugadores) do
+    jugadores
+    |> Enum.uniq_by(fn j -> j.identificacion end) # Quita duplicados por cédula
+    |> Enum.filter(fn j -> j.nombre != "" and j.identificacion != "" end) # Quita vacíos
+  end
+
+
 end
