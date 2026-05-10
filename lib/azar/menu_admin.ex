@@ -1,4 +1,4 @@
-defmodule Azar.Admin do
+defmodule Azar.MenuAdminAdmin do
 
   def menu_admin do
     IO.puts("""
