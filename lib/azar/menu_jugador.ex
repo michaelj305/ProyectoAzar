@@ -98,9 +98,7 @@ defmodule Azar.MenuJugador do
     end
   end
 
-  # =========================
   # REGISTRARSE
-  # =========================
 
   defp registrarse do
     IO.puts("\n===== REGISTRO DE JUGADOR =====\n")
@@ -109,9 +107,7 @@ defmodule Azar.MenuJugador do
     IO.puts("\n¡Jugador registrado exitosamente!")
   end
 
-  # =========================
   # INICIAR SESIÓN
-  # =========================
 
   defp iniciar_sesion do
     IO.puts("\n===== INICIAR SESIÓN =====\n")
@@ -135,9 +131,7 @@ defmodule Azar.MenuJugador do
     end
   end
 
-  # =========================
   # VER SORTEOS
-  # =========================
 
 defp ver_sorteos do
   IO.puts("\n===== SORTEOS DISPONIBLES =====\n")
@@ -152,36 +146,28 @@ defp ver_sorteos do
   end
 end
 
-  # =========================
   # COMPRAR BILLETE
-  # =========================
 
   defp comprar_billete(_jugador) do
     IO.puts("\n===== COMPRAR BILLETE/FRACCIÓN =====\n")
     IO.puts("(Función por implementar)")
   end
 
-  # =========================
   # HISTORIAL DE APUESTAS
-  # =========================
 
   defp ver_historial(_jugador) do
     IO.puts("\n===== MI HISTORIAL DE APUESTAS =====\n")
     IO.puts("(Función por implementar)")
   end
 
-  # =========================
   # PREMIOS GANADOS
-  # =========================
 
   defp ver_premios(_jugador) do
     IO.puts("\n===== MIS PREMIOS GANADOS =====\n")
     IO.puts("(Función por implementar)")
   end
 
-  # =========================
   # PAUSA
-  # =========================
 
   defp pausa do
     IO.gets("\nPresione ENTER para continuar...")
