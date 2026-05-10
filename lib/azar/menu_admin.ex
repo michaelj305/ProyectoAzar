@@ -1,4 +1,4 @@
-defmodule Azar.MenuAdminAdmin do
+defmodule Azar.MenuAdmin do
 
   def menu_admin do
     IO.puts("""
@@ -67,7 +67,11 @@ defmodule Azar.MenuAdminAdmin do
       |> String.trim()
 
     resultado =
-      Azar.SorteoServer.crear(nombre, precio, premios)
+      Azar.SorteoServer.crear_sorteo(%{
+        nombre: nombre,
+        precio_billete: precio,
+        premios: premios
+      })
 
     IO.puts("\nResultado:")
     IO.inspect(resultado)
@@ -80,7 +84,7 @@ defmodule Azar.MenuAdminAdmin do
   def listar_sorteos do
     IO.puts("\n===== LISTA DE SORTEOS =====\n")
 
-    sorteos = Azar.SorteoServer.todos()
+    sorteos = Azar.SorteoServer.listar_sorteos()
 
     IO.inspect(sorteos)
   end
@@ -97,7 +101,7 @@ defmodule Azar.MenuAdminAdmin do
       |> String.trim()
 
     resultado =
-      Azar.SorteoServer.finalizar(id)
+      Azar.SorteoServer.finalizar_sorteo(id)
 
     IO.puts("\nResultado:")
     IO.inspect(resultado)

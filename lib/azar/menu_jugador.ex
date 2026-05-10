@@ -141,7 +141,7 @@ defmodule Azar.MenuJugador do
 
 defp ver_sorteos do
   IO.puts("\n===== SORTEOS DISPONIBLES =====\n")
-  sorteos = Azar.SorteoServer.listar_sorteos()  # ← corregido
+  sorteos = Azar.SorteoServer.listar_sorteos()
 
   if sorteos == [] do
     IO.puts("No hay sorteos disponibles por el momento.")
