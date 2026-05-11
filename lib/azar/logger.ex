@@ -1,7 +1,7 @@
 defmodule Azar.Logger do
 
   def registrar(solicitud, resultado) do
-    registrar(:info, __MODULE__, solicitud, resultado)
+    registrar(:info, "Sistema", solicitud, resultado)
   end
 
   @doc """
