@@ -1,19 +1,25 @@
 defmodule Azar.Logger do
-  @doc """
-  Módulo encargado de cumplir con el requisito de bitácora del sistema.
-  """
+
   def registrar(solicitud, resultado) do
-    # Obtenemos fecha y hora para el registro
-    tiempo = DateTime.utc_now() |> DateTime.to_string()
+    registrar(:info, __MODULE__, solicitud, resultado)
+  end
 
-    # Formateamos la línea según el PDF: fecha - hora - solicitud - resultado
-    linea = "#{tiempo} - Solicitud: #{solicitud} - Resultado: #{resultado}"
+  @doc """
+  Registra un evento con nivel, módulo, solicitud y resultado.
+  Niveles válidos: :info, :warning, :error
+  Formato: [NIVEL] FECHA HORA - Módulo - Solicitud - Resultado
+  """
+  def registrar(nivel, modulo, solicitud, resultado) do
+    tiempo = DateTime.utc_now()
+    fecha = DateTime.to_date(tiempo) |> Date.to_string()
+    hora = DateTime.to_time(tiempo) |> Time.to_string()
 
-    # REQUISITO 1: Mostrar en pantalla
+    nivel_str = nivel |> Atom.to_string() |> String.upcase()
+
+    linea = "[#{nivel_str}] #{fecha} #{hora} - #{modulo} - #{solicitud} - #{resultado}"
+
     IO.puts(linea)
 
-    # REQUISITO 2: Guardar en archivo de texto (bitácora/log)
-    # Usamos [:append] para que no borre lo anterior, sino que escriba abajo.
     File.write("lib/bitacora.txt", linea <> "\n", [:append])
   end
 end
